@@ -15,6 +15,7 @@ pipeline {
                       steps {
                                bat "test_file_package"
                       }
+               }
                stage("Consolidate Results") {
                       steps {
                                input("Do you want to capture the results?")
@@ -22,5 +23,5 @@ pipeline {
                                archive'target/*.jar'
                       }      
                }
-        }
+       }       
 }
