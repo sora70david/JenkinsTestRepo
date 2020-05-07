@@ -1,0 +1,7 @@
+#############################################
+ How to invoke a job from outside of Jenkins
+#############################################
+
+authentication token:  lkajdf;lkjadfl;kjadf;lj
+
+localhost:8080/job/Run%20Java%20Program%20-%20Invoke%20from%20outside%20Jenkins/build?token=lkajdf;lkjadfl;kjadf;lj
