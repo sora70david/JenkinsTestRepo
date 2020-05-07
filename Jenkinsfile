@@ -1,7 +1,7 @@
 pipeline {
        agent any
        stages {
-              stage("Cleaning Stage") {
+               stage("Cleaning Stage") {
                       steps {
                                bat "test_file_clean"
                       }
@@ -15,6 +15,12 @@ pipeline {
                       steps {
                                bat "test_file_package"
                       }
+               stage("Consolidate Results") {
+                      steps {
+                               input("Do you want to capture the results?")
+                               junit'**/target/surefire-reports/TEST-*.xml'
+                               archive'target/*.jar'
+                      }      
                }
         }
 }
